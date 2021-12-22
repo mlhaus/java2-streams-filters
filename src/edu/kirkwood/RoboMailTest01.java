@@ -24,6 +24,10 @@ public class RoboMailTest01 {
 //                .forEach(t -> robo.roboMail(t));
                 .forEach(robo::roboMail);
         pl.stream()
+                .filter(t -> t.getDept().equals("Sales"))
+                .filter(t -> t.getRole().equals(Role.EXECUTIVE))
+                .forEach(p -> robo.roboMail(p));
+        pl.stream()
                 .filter(salesExecutives)
 //                .forEach(t -> robo.roboText(t));
                 .forEach(robo::roboText);
@@ -36,9 +40,19 @@ public class RoboMailTest01 {
 //                .forEach(t -> robo.roboMail(t));
                 .forEach(robo::roboMail);
         pl.stream()
+                .filter(t -> t.getDept().equals("Sales"))
+                .filter(t -> t.getAge() > 50)
+                .forEach(p -> robo.roboMail(p));
+        pl.stream()
                 .filter(salesEmployeesOver50)
 //                .forEach(t -> robo.roboText(t));
                 .forEach(robo::roboText);
 
+        System.out.println("\n=== Male Engineers Under 65 ===");
+        pl.stream()
+                .filter(t -> t.getGender().equals(Gender.MALE))
+                .filter(t -> t.getDept().equals("Engineering"))
+                .filter(t -> t.getAge() < 65)
+                .forEach(p -> robo.roboMail(p));
     }
 }

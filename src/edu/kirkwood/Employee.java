@@ -40,9 +40,14 @@ public class Employee {
 
     public static List<Employee> getShortList() {
         List<Employee> employees = new ArrayList<>();
+        employees.add(new Employee("Bob", "Baker", 23, Gender.MALE, Role.MANAGER, "Finance", "bob.baker@example.com", "111-555-5555"));
+        employees.add(new Employee("Jane", "Doe", 25, Gender.FEMALE, Role.SALARIED, "Human Resources", "jane.doe@example.com", "111-555-5557"));
+        employees.add(new Employee("John", "Doe", 28, Gender.MALE, Role.EXECUTIVE, "Finance", "john.doe@example.com", "111-555-5558"));
+        employees.add(new Employee("James", "Johnson", 45, Gender.MALE, Role.SALARIED, "Engineering", "james.johnson@example.com", "111-555-5559"));
         employees.add(new Employee("John", "Adams", 52, Gender.MALE, Role.MANAGER, "Sales", "john.adams@example.com", "112-111-1111"));
+        employees.add(new Employee("Joe", "Bailey", 66, Gender.MALE, Role.SALARIED, "Engineering", "joe.bailey@example.com", "111-555-5560"));
+        employees.add(new Employee("Phil", "Smith", 55, Gender.MALE, Role.EXECUTIVE, "Human Resources", "phil.smith@example.com", "111-555-5561"));
         employees.add(new Employee("Betty", "Jones", 65, Gender.FEMALE, Role.EXECUTIVE, "Sales", "betty.jones@example.com", "211-333-1234"));
-        employees.add(new Employee("Marc", "Hauschildt", 40, Gender.MALE, Role.SALARIED, "Education", "Marc.Hauschildt@kirkwood.edu", "319-555-5555"));
         return employees;
     }
 
