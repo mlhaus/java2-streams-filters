@@ -3,6 +3,7 @@ package edu.kirkwood;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        RoboMailTest01.main(args);
+
     }
 }

@@ -20,9 +20,9 @@ public class RoboMail01 {
 //        }
 //    }
 
-    public void roboMail(Employee p) {
+    public void roboMail(Employee p){
         System.out.println("Emailing: " + p.getGivenName()
-            + " " + p.getSurName() + " age " + p.getAge()
+                + " " + p.getSurName() + " age " + p.getAge()
                 + " at " + p.getEmail());
     }
 

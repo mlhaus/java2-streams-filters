@@ -10,150 +10,324 @@ public class Employee {
     private Gender gender;
     private Role role;
     private String dept;
-    private String email;
+    private String eMail;
     private String phone;
-//    private String address;
-//    private String city;
-//    private String state;
-//    private String code;
+    private String address;
+    private String city;
+    private String state;
+    private String code;
 
-    public Employee() {
+    public static class Builder{
+
+        private String givenName="";
+        private String surName="";
+        private int age = 0;
+        private Gender gender = Gender.FEMALE;
+        private Role role = Role.STAFF;
+        private String dept = "";
+        private String eMail = "";
+        private String phone = "";
+        private String address = "";
+        private String city = "";
+        private String state = "";
+        private String code = "";
+
+        public Employee.Builder givenName(String givenName){
+            this.givenName = givenName;
+            return this;
+        }
+
+        public Employee.Builder surName(String surName){
+            this.surName = surName;
+            return this;
+        }
+
+        public Employee.Builder age (int val){
+            age = val;
+            return this;
+        }
+
+        public Employee.Builder gender(Gender val){
+            gender = val;
+            return this;
+        }
+
+        public Employee.Builder role(Role val){
+            role = val;
+            return this;
+        }
+
+        public Employee.Builder dept(String val){
+            dept = val;
+            return this;
+        }
+
+        public Employee.Builder email(String val){
+            eMail = val;
+            return this;
+        }
+
+        public Employee.Builder phoneNumber(String val){
+            phone = val;
+            return this;
+        }
+
+        public Employee.Builder address(String val){
+            address = val;
+            return this;
+        }
+
+        public Employee.Builder city(String val){
+            city = val;
+            return this;
+        }
+
+        public Employee.Builder state(String val){
+            state = val;
+            return this;
+        }
+
+        public Employee.Builder code(String val){
+            code = val;
+            return this;
+        }
+
+        public Employee build(){
+            return new Employee(this);
+        }
     }
 
-    public Employee(String givenName, String surName, int age, Gender gender
-                    , Role role, String dept, String email, String phone
-//                    , String address, String city, String state, String code
-        ) {
-        this.givenName = givenName;
-        this.surName = surName;
-        this.age = age;
-        this.gender = gender;
-        this.role = role;
-        this.dept = dept;
-        this.email = email;
-        this.phone = phone;
-//        this.address = address;
-//        this.city = city;
-//        this.state = state;
-//        this.code = code;
+    private Employee(){
+        super();
     }
 
-    public static List<Employee> getShortList() {
-        List<Employee> employees = new ArrayList<>();
-        employees.add(new Employee("Bob", "Baker", 23, Gender.MALE, Role.MANAGER, "Finance", "bob.baker@example.com", "111-555-5555"));
-        employees.add(new Employee("Jane", "Doe", 25, Gender.FEMALE, Role.SALARIED, "Human Resources", "jane.doe@example.com", "111-555-5557"));
-        employees.add(new Employee("John", "Doe", 28, Gender.MALE, Role.EXECUTIVE, "Finance", "john.doe@example.com", "111-555-5558"));
-        employees.add(new Employee("James", "Johnson", 45, Gender.MALE, Role.SALARIED, "Engineering", "james.johnson@example.com", "111-555-5559"));
-        employees.add(new Employee("John", "Adams", 52, Gender.MALE, Role.MANAGER, "Sales", "john.adams@example.com", "112-111-1111"));
-        employees.add(new Employee("Joe", "Bailey", 66, Gender.MALE, Role.SALARIED, "Engineering", "joe.bailey@example.com", "111-555-5560"));
-        employees.add(new Employee("Phil", "Smith", 55, Gender.MALE, Role.EXECUTIVE, "Human Resources", "phil.smith@example.com", "111-555-5561"));
-        employees.add(new Employee("Betty", "Jones", 65, Gender.FEMALE, Role.EXECUTIVE, "Sales", "betty.jones@example.com", "211-333-1234"));
-        return employees;
+    private Employee(Employee.Builder builder){
+        givenName = builder.givenName;
+        surName = builder.surName;
+        age = builder.age;
+        gender = builder.gender;
+        role = builder.role;
+        dept = builder.dept;
+        eMail = builder.eMail;
+        phone = builder.phone;
+        address = builder.address;
+        city = builder.city;
+        state = builder.state;
+        code = builder.code;
+
     }
 
-    public String getGivenName() {
+    public String getGivenName(){
         return givenName;
     }
 
-    public void setGivenName(String givenName) {
-        this.givenName = givenName;
-    }
-
-    public String getSurName() {
+    public String getSurName(){
         return surName;
     }
 
-    public void setSurName(String surName) {
-        this.surName = surName;
-    }
-
-    public int getAge() {
+    public int getAge(){
         return age;
     }
 
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public Gender getGender() {
+    public Gender getGender(){
         return gender;
     }
 
-    public void setGender(Gender gender) {
-        this.gender = gender;
-    }
-
-    public Role getRole() {
+    public Role getRole(){
         return role;
     }
 
-    public void setRole(Role role) {
-        this.role = role;
-    }
-
-    public String getDept() {
+    public String getDept(){
         return dept;
     }
 
-    public void setDept(String dept) {
-        this.dept = dept;
+    public String getEmail(){
+        return eMail;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPhone() {
+    public String getPhone(){
         return phone;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public String getAddress(){
+        return address;
     }
 
-//    public String getAddress() {
-//        return address;
-//    }
-//
-//    public void setAddress(String address) {
-//        this.address = address;
-//    }
-//
-//    public String getCity() {
-//        return city;
-//    }
-//
-//    public void setCity(String city) {
-//        this.city = city;
-//    }
-//
-//    public String getState() {
-//        return state;
-//    }
-//
-//    public void setState(String state) {
-//        this.state = state;
-//    }
-//
-//    public String getCode() {
-//        return code;
-//    }
-//
-//    public void setCode(String code) {
-//        this.code = code;
-//    }
+    public String getCity(){
+        return city;
+    }
+
+    public String getState(){
+        return state;
+    }
+
+    public String getCode(){
+        return code;
+    }
+
+
+    public void print(){
+        System.out.println(
+                "\nName: " + givenName + " " + surName + "\n" +
+                        "Age: " + age + "\n" +
+                        "Gender: " + gender + "\n" +
+                        "Role: " + role + "\n" +
+                        "Dept: " + dept + "\n" +
+                        "eMail: " + eMail + "\n" +
+                        "Phone: " + phone + "\n" +
+                        "Address: " + address + "\n" +
+                        "City: " + city + "\n" +
+                        "State: " + state + "\n" +
+                        "Code: " + code + "\n"
+        );
+    }
 
     @Override
-    public String toString() {
-        return "Employee{" +
-                "givenName='" + givenName + '\'' +
-                ", surName='" + surName + '\'' +
-                ", age=" + age +
-                ", gender=" + gender +
-                '}';
+    public String toString(){
+        return "Name: " + givenName + " " + surName + "\n" + "Age: " + age + "  Gender: " + gender + "\n" + "eMail: " + eMail + "\n" + " Role: " + role + " Dept: " + dept;
     }
+
+    public static List<Employee> createShortList(){
+        List<Employee> people = new ArrayList<>();
+
+        people.add(
+                new Employee.Builder()
+                        .givenName("Bob")
+                        .surName("Baker")
+                        .age(23)
+                        .gender(Gender.MALE)
+                        .role(Role.STAFF)
+                        .dept("ENG")
+                        .email("bob.baker@example.com")
+                        .phoneNumber("201-121-4678")
+                        .address("44 4th St")
+                        .city("Smallville")
+                        .state("KS")
+                        .code("12333")
+                        .build()
+        );
+
+        people.add(
+                new Employee.Builder()
+                        .givenName("Jane")
+                        .surName("Doe")
+                        .age(25)
+                        .gender(Gender.FEMALE)
+                        .role(Role.STAFF)
+                        .dept("Sales")
+                        .email("jane.doe@example.com")
+                        .phoneNumber("202-123-4678")
+                        .address("33 3rd St")
+                        .city("Smallville")
+                        .state("KS")
+                        .code("12333")
+                        .build()
+        );
+
+        people.add(
+                new Employee.Builder()
+                        .givenName("John")
+                        .surName("Doe")
+                        .age(28)
+                        .gender(Gender.MALE)
+                        .role(Role.MANAGER)
+                        .dept("HR")
+                        .email("john.doe@example.com")
+                        .phoneNumber("202-123-4678")
+                        .address("33 3rd St")
+                        .city("Smallville")
+                        .state("KS")
+                        .code("12333")
+                        .build()
+        );
+
+        people.add(
+                new Employee.Builder()
+                        .givenName("James")
+                        .surName("Johnson")
+                        .age(45)
+                        .gender(Gender.MALE)
+                        .role(Role.MANAGER)
+                        .dept("Eng")
+                        .email("james.johnson@example.com")
+                        .phoneNumber("333-456-1233")
+                        .address("201 2nd St")
+                        .city("New York")
+                        .state("NY")
+                        .code("12111")
+                        .build()
+        );
+
+        people.add(
+                new Employee.Builder()
+                        .givenName("John")
+                        .surName("Adams")
+                        .age(52)
+                        .gender(Gender.MALE)
+                        .role(Role.MANAGER)
+                        .dept("Sales")
+                        .email("john.adams@example.com")
+                        .phoneNumber("112-111-1111")
+                        .address("111 1st St")
+                        .city("Braintree")
+                        .state("MA")
+                        .code("11111")
+                        .build()
+        );
+
+        people.add(
+                new Employee.Builder()
+                        .givenName("Joe")
+                        .surName("Bailey")
+                        .age(62)
+                        .gender(Gender.MALE)
+                        .role(Role.EXECUTIVE)
+                        .dept("Eng")
+                        .email("joebob.bailey@example.com")
+                        .phoneNumber("112-111-1111")
+                        .address("111 1st St")
+                        .city("Town")
+                        .state("CA")
+                        .code("11111")
+                        .build()
+        );
+
+        people.add(
+                new Employee.Builder()
+                        .givenName("Phil")
+                        .surName("Smith")
+                        .age(55)
+                        .gender(Gender.MALE)
+                        .role(Role.EXECUTIVE)
+                        .dept("HR")
+                        .email("phil.smith@examp;e.com")
+                        .phoneNumber("222-33-1234")
+                        .address("22 2nd St")
+                        .city("New Park")
+                        .state("CO")
+                        .code("222333")
+                        .build()
+        );
+
+        people.add(
+                new Employee.Builder()
+                        .givenName("Betty")
+                        .surName("Jones")
+                        .age(65)
+                        .gender(Gender.FEMALE)
+                        .role(Role.EXECUTIVE)
+                        .dept("Sales")
+                        .email("betty.jones@example.com")
+                        .phoneNumber("211-33-1234")
+                        .address("22 4th St")
+                        .city("New Park")
+                        .state("CO")
+                        .code("222333")
+                        .build()
+        );
+
+
+        return people;
+    }
+
 }

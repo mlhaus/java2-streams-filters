@@ -1,8 +1,3 @@
 package edu.kirkwood;
 
-public enum Role {
-    EXECUTIVE,
-    MANAGER,
-    SALARIED,
-    WAGED
-}
+public enum Role { STAFF, MANAGER, EXECUTIVE }
